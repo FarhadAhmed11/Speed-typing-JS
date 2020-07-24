@@ -154,3 +154,8 @@ input {
     height: 100%;
     z-index: 1;
 }
+
+#time, #score {
+    font-size: 1.4rem;
+    color: var(--tertiary-color);
+}

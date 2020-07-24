@@ -21,9 +21,9 @@ let randomWord;
 let score = 0;
 let time = 10;
 
-let difficulty = localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty') : 'medium';
+let difficulty = localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty') : 'hard';
 
-difficultySelect.value = localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty') : 'medium';
+difficultySelect.value = localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty') : 'hard';
 
 text.focus();
 
