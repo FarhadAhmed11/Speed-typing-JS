@@ -34,7 +34,7 @@ function getRandomWord() {
 }
 
 function addWordToDOM() {
-    randomWord = getRandomWord();
+    randomWord = getRandomWord().toUpperCase();
     word.innerHTML = randomWord;
 }
 
@@ -66,10 +66,10 @@ function gameOver() {
 
 addWordToDOM();
 
-// EVENT LISTENERES.
-text.addEventListener("input", e => {
-    const insertedText = e.target.value;
-    if(insertedText === randomWord) {
+
+function matchWord(e) {
+    const insertedText = e.target.value.toUpperCase();
+    if(insertedText == randomWord) {
         addWordToDOM();
         updateScore();
         
@@ -88,36 +88,18 @@ text.addEventListener("input", e => {
 
         updateTime();
     }
-});
+}
 
+// EVENT LISTENERES.
+text.addEventListener("input", e => {
+    matchWord(e);
+});
 text.addEventListener("keyup", e => {
     // Number 13 is the "Enter" key on the keyboard
-
     if (event.keyCode === 13) {
-        // Cancel the default action, if needed
-        const insertedText = e.target.value;
-        console.log(e.target.value)
-        if(insertedText === randomWord) {
-            addWordToDOM();
-            updateScore();
-            
-            // clear.
-            e.target.value = '';
-    
-            if(difficulty === 'very hard') {
-                time += 2;
-            } else if (difficulty === 'hard') {
-                time += 3;
-            } else if (difficulty === 'medium'){
-                time += 4;
-            } else {
-                time += 5;
-            }
-    
-            updateTime();
-        }
-      }
-  });
+    matchWord(e);
+    }
+});
 
 settingsBtn.addEventListener("click", () => {
     settings.classList.toggle('hide');
