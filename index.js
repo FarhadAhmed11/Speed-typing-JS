@@ -79,13 +79,13 @@ text.addEventListener("input", e => {
         e.target.value = '';
 
         if(difficulty === 'very hard') {
-            time += 1;
-        } else if (difficulty === 'hard') {
             time += 2;
-        } else if (difficulty === 'medium'){
+        } else if (difficulty === 'hard') {
             time += 3;
-        } else {
+        } else if (difficulty === 'medium'){
             time += 4;
+        } else {
+            time += 5;
         }
 
         updateTime();
