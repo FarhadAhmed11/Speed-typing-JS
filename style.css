@@ -156,6 +156,9 @@ input {
 }
 
 #time, #score {
-    font-size: 1.4rem;
-    color: var(--tertiary-color);
+    font-size: 3rem;
+    font-weight: bolder;
+}
+#time {
+    color: orangered;
 }
