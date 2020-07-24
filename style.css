@@ -1,0 +1,156 @@
+:root {
+    /* ~~~ MAIN COLORS ~~~ */
+    --primary-color: #022534;
+    --secondary-color: #094f6e;
+    --tertiary-color: #2d7a9c;
+    --quaternary-color: #96c7d5;
+    --quinary-color: #e4f5ff;
+
+    /* ~~~ SUB COLORS ~~~ */
+    --color-grey-light-1: #faf9f9;
+    --color-grey-light-2: #eee;
+    --color-grey-light-3: #ccc;
+    --color-grey-dark-1: #777;
+    --color-grey-dark-2: #555;
+    --color-grey-dark-3: #333;
+
+    /* ~~~ SHADOW COLORS ~~~ */
+    --shadow-dark: 0 2 6 rgba(0,0,0,.3);
+    --shadow-light: 0 2 6 rgba(0,0,0,.06);
+
+    /* ~~~ MEDIA QUERIES ~~~ */
+     
+    --bp-largest: 75em;  /* 1200px */
+    --bp-large: 68.75em; /* 1100px */
+    --bp-medium: 56.25em; /* 900px */ 
+    --bp-small: 40.625em; /* 650px */ 
+    --bp-smallest: 26.25em; /* 420px */
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.center {
+	text-align: center;
+}
+
+a {
+	cursor: pointer;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+    background-color: #022534;
+    font-family: "Lato", Helvetica, sans-serif;
+    margin: 0;
+    font-size: 1.6rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+button {
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 5px 15px;
+}
+
+select {
+    width: 200px;
+    padding: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
+    background-color: var(--tertiary-color);
+}
+
+select:focus,
+button:focus {
+    outline: 0;
+}
+
+.settings-btn {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+}
+
+.settings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.3);
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0);
+    transition: transform .3s ease-in;
+}
+
+.settings.hide {
+    transform: translateY(-100%);
+}
+
+.container {
+    background-color: var(--tertiary-color);
+    padding: 2rem;
+    border-radius: 4x;
+    box-shadow: 0 3px 5px rgba(0,0,0,.3);
+    position: relative;
+    text-align: center;
+    width: 500px;
+
+}
+
+h2 {
+    background-color: rgba(0,0,0,.3);
+    padding: 8px;
+    border-radius: 4px;
+    margin: 0 0 40px;
+}
+
+input {
+    border: 0;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 1.4rem;
+    width: 300px;
+    margin-top: 10px;
+}
+
+.score-container {
+    position: absolute;
+    top: 6rem;
+    right: 2rem;
+}
+
+.time-container {
+    position: absolute;
+    top: 6rem;
+    left: 2rem;
+}
+
+.end-game-container {
+    background-color: inherit;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
