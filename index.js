@@ -47,7 +47,6 @@ function updateScore() {
 function updateTime() {
     time--;
     timeEl.innerText = time + "s";
-    console.log(time, timeInterval);
 
     if(time === 0) {
         clearInterval(timeInterval);
@@ -70,7 +69,6 @@ addWordToDOM();
 // EVENT LISTENERES.
 text.addEventListener("input", e => {
     const insertedText = e.target.value;
-    console.log(insertedText);
     if(insertedText === randomWord) {
         addWordToDOM();
         updateScore();
@@ -91,6 +89,35 @@ text.addEventListener("input", e => {
         updateTime();
     }
 });
+
+text.addEventListener("keyup", e => {
+    // Number 13 is the "Enter" key on the keyboard
+
+    if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        const insertedText = e.target.value;
+        console.log(e.target.value)
+        if(insertedText === randomWord) {
+            addWordToDOM();
+            updateScore();
+            
+            // clear.
+            e.target.value = '';
+    
+            if(difficulty === 'very hard') {
+                time += 2;
+            } else if (difficulty === 'hard') {
+                time += 3;
+            } else if (difficulty === 'medium'){
+                time += 4;
+            } else {
+                time += 5;
+            }
+    
+            updateTime();
+        }
+      }
+  });
 
 settingsBtn.addEventListener("click", () => {
     settings.classList.toggle('hide');
